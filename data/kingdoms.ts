@@ -1,5 +1,5 @@
 import type { Kingdom } from "@/data/types";
-import { ROME_URL, TIMELINE_URL } from "@/lib/site";
+import { ROME_URL, TIMELINE_URL, VIKING_URL } from "@/lib/site";
 
 export const kingdoms: readonly Kingdom[] = [
   {
@@ -109,6 +109,7 @@ export const kingdoms: readonly Kingdom[] = [
       { href: "/people/clovis", label: "클로비스" },
       { href: "/people/charlemagne", label: "카롤루스 대제" },
       { href: "/family-tree?tree=franks&focus=charlemagne", label: "메로빙·카롤링 관계도" },
+      { href: `${VIKING_URL}/chronicle/frankish-raids`, label: "바이킹이야기에서 프랑크 왕국 습격" },
       { href: "/kingdoms#next-viking", label: "다음 이야기: 바이킹" },
     ],
     filmSlugs: [],
@@ -140,6 +141,8 @@ export const kingdoms: readonly Kingdom[] = [
       { href: "/tribes#saxons", label: "색슨" },
       { href: `${TIMELINE_URL}/events/arthur-tradition`, label: "나두연표에서 아더 왕 전승" },
       { href: `${TIMELINE_URL}/events/lindisfarne`, label: "나두연표에서 린디스판" },
+      { href: `${VIKING_URL}/chronicle/lindisfarne`, label: "바이킹이야기에서 린디스판" },
+      { href: `${VIKING_URL}/chronicle/alfred-edington`, label: "바이킹이야기에서 앨프리드와 에딩턴" },
       { href: "/kingdoms#next-viking", label: "다음 이야기: 바이킹" },
     ],
     filmSlugs: ["king-arthur-2004", "the-last-kingdom-2015"],
