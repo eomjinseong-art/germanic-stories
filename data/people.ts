@@ -1,5 +1,5 @@
 import type { Person } from "@/data/types";
-import { PHILOSOPHY_URL, ROME_URL, TIMELINE_URL } from "@/lib/site";
+import { PHILOSOPHY_URL, ROME_URL, TIMELINE_URL, VIKING_URL } from "@/lib/site";
 
 const rome = ROME_URL;
 const time = TIMELINE_URL;
@@ -552,6 +552,7 @@ export const people: readonly Person[] = [
       { href: "/family-tree?tree=franks&focus=charlemagne", label: "카롤링 관계도" },
       { href: "/kingdoms#next-viking", label: "다음 이야기: 바이킹" },
       { href: `${time}/events/lindisfarne`, label: "나두연표에서 린디스판" },
+      { href: `${VIKING_URL}/chronicle/lindisfarne`, label: "바이킹이야기에서 린디스판" },
     ],
     filmSlugs: [],
   },

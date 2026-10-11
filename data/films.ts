@@ -1,5 +1,5 @@
 import type { Film } from "@/data/types";
-import { PHILOSOPHY_URL, ROME_URL, TIMELINE_URL } from "@/lib/site";
+import { PHILOSOPHY_URL, ROME_URL, TIMELINE_URL, VIKING_URL } from "@/lib/site";
 
 export const films: readonly Film[] = [
   {
@@ -113,6 +113,7 @@ export const films: readonly Film[] = [
       { href: "/kingdoms/anglo-saxons", label: "앵글로색슨" },
       { href: "/kingdoms#next-viking", label: "다음 이야기: 바이킹" },
       { href: `${TIMELINE_URL}/events/alfred-edington`, label: "나두연표에서 에딩턴과 앨프리드" },
+      { href: `${VIKING_URL}/films#the-last-kingdom-2015`, label: "바이킹이야기의 라스트 킹덤" },
     ],
   },
 ];

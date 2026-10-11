@@ -22,6 +22,7 @@ export const KOREA_URL = "https://korea-stories.vercel.app";
 export const TIMELINE_URL = "https://nadoo-timeline.vercel.app";
 export const HUB_URL = "https://tinalinkeom.vercel.app";
 export const VIKING_URL = "https://viking-stories.vercel.app";
+export const WORLD_URL = "https://nadoo-world.vercel.app";
 export const CHECKLIST_URL = "https://movie-checklist-sigma.vercel.app/?list=history";
 
 export const SISTER_SITES = [
@@ -29,16 +30,18 @@ export const SISTER_SITES = [
   { href: ILIAD_URL, label: "일리아스이야기", en: "Iliad" },
   { href: GREECE_URL, label: "그리스이야기", en: "Greece" },
   { href: ROME_URL, label: "로마이야기", en: "Rome" },
+  { href: VIKING_URL, label: "바이킹이야기", en: "Vikings" },
   { href: EGYPT_URL, label: "이집트이야기", en: "Egypt" },
   { href: PERSIA_URL, label: "페르시아이야기", en: "Persia" },
   { href: CHOSEN_URL, label: "더 초즌 · 성경", en: "The Chosen · Bible" },
   { href: PHILOSOPHY_URL, label: "철학이야기", en: "Philosophy" },
   { href: KOREA_URL, label: "대한민국이야기", en: "Korea" },
+  { href: WORLD_URL, label: "나두세계", en: "World" },
   { href: TIMELINE_URL, label: "나두연표", en: "Timeline" },
   { href: HUB_URL, label: "나두 허브", en: "Nadoo Hub" },
 ] as const;
 
-/** Sister origins a build-time link check may name. Do not fetch them. 바이킹이야기는 다음 사이트라 잠시 404여도 이 빌드가 실패하면 안 됩니다. */
+/** Sister origins a build-time link check may name. Do not fetch them. 나두세계는 만드는 중이라 잠시 404여도 이 빌드가 실패하면 안 됩니다. */
 export const ALLOWED_SISTER_ORIGINS = SISTER_SITES.map((site) => new URL(site.href).origin);
 
 export const OTHER_FAMILY_TREES = [
@@ -46,6 +49,7 @@ export const OTHER_FAMILY_TREES = [
   { href: `${ILIAD_URL}/family-tree`, label: "일리아스이야기 가족관계도", en: "Iliad" },
   { href: `${GREECE_URL}/family-tree`, label: "그리스이야기 가족관계도", en: "Greece" },
   { href: `${ROME_URL}/family-tree`, label: "로마이야기 가족관계도", en: "Rome" },
+  { href: `${VIKING_URL}/family-tree`, label: "바이킹이야기 가족관계도", en: "Vikings" },
   { href: `${EGYPT_URL}/family-tree`, label: "이집트이야기 가족관계도", en: "Egypt" },
   { href: `${PERSIA_URL}/family-tree`, label: "페르시아이야기 가족관계도", en: "Persia" },
   { href: `${KOREA_URL}/family-tree`, label: "대한민국이야기 가족관계도", en: "Korea" },
@@ -56,6 +60,7 @@ export const OTHER_FILM_PAGES = [
   { href: `${ILIAD_URL}/movies`, label: "일리아스이야기 영화", en: "Iliad" },
   { href: `${GREECE_URL}/movies`, label: "그리스이야기 영화", en: "Greece" },
   { href: `${ROME_URL}/movies`, label: "로마이야기 영화", en: "Rome" },
+  { href: `${VIKING_URL}/films`, label: "바이킹이야기 영화", en: "Vikings" },
   { href: `${EGYPT_URL}/movies`, label: "이집트이야기 영화", en: "Egypt" },
   { href: `${PERSIA_URL}/movies`, label: "페르시아이야기 영화", en: "Persia" },
   { href: `${KOREA_URL}/films`, label: "대한민국이야기 영화", en: "Korea" },
