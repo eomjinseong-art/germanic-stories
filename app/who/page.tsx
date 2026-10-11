@@ -50,6 +50,7 @@ export default function WhoPage() {
           { href: "/chronicle", label: "연대기" },
           { href: "/barbarians", label: "드라마의 제목, 바바리안" },
           { href: `${ROME_URL}/wars/gallic-war`, label: "로마이야기에서 갈리아 전쟁" },
+          { href: "https://nadoo-world.vercel.app/countries/de", label: "나두세계: 오늘의 독일" },
         ]}
       />
     </div>
