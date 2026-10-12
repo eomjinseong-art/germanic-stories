@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHead } from "@/components/PageHead";
 import { RelatedLinks } from "@/components/RelatedLinks";
+import { EPISODES, RELATIONS, REL_LABEL, episodePath, seasonPath } from "@/data/barbarians";
 import { breadcrumbLd, jsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -34,6 +35,16 @@ const INVENTED = [
   ["가이우스", "아르미니우스가 로마에 두었다는 아들. 사료에 있는 아들은 투스넬다의 툴리쿠스입니다."],
 ];
 
+const REL_BG: Record<string, string> = {
+  friend: "rgba(47,74,60,0.12)",
+  love: "rgba(163,71,50,0.15)",
+  tense: "rgba(166,132,61,0.18)",
+  enemy: "rgba(120,30,30,0.22)",
+  allied: "rgba(47,74,60,0.22)",
+  dead: "rgba(0,0,0,0.12)",
+  apart: "transparent",
+};
+
 export default function BarbariansPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
@@ -58,13 +69,13 @@ export default function BarbariansPage() {
         </h2>
         <ul className="mt-3 space-y-3 text-sm leading-7">
           <li className="rounded-lg border border-line bg-card p-4">
-            <p className="font-serif text-lg text-ink">시즌 1 · 2020년 10월 23일 · 6편</p>
+            <Link href="/barbarians/s1" className="font-serif text-lg text-ink hover:text-terra">시즌 1 · 2020년 10월 23일 · 6편 →</Link>
             <p className="mt-1">
               케루스키 마을과 새 총독 바루스, 로마 장교로 돌아온 아르미니우스, 투스넬다와 폴크윈. 끝은 토이토부르크 숲의 매복입니다. 로마 인물은 라틴어를, 게르만 쪽은 독일어를 씁니다.
             </p>
           </li>
           <li className="rounded-lg border border-line bg-card p-4">
-            <p className="font-serif text-lg text-ink">시즌 2 · 2022년 10월 21일 · 6편</p>
+            <Link href="/barbarians/s2" className="font-serif text-lg text-ink hover:text-terra">시즌 2 · 2022년 10월 21일 · 6편 →</Link>
             <p className="mt-1">
               패배 다음 해의 로마 재건, 동생 플라부스, 마르코만니의 마로보두스, 티베리우스와 게르마니쿠스가 나옵니다. 공개된 시즌은 여기까지입니다.
             </p>
@@ -73,6 +84,71 @@ export default function BarbariansPage() {
         <p className="mt-3 text-sm leading-7 text-muted">
           시즌 3은 공개되지 않았습니다. 2024년의 보도는 제작이 마무리되었고 가까운 추가 시즌 계획이 없다고 전합니다. 공식 취소 문구를 이 글에서 확인하지는 못했으므로, ‘폐지되었다’고 단정하지는 않습니다.
         </p>
+      </section>
+
+
+      <section className="mt-10" aria-labelledby="guide-heading">
+        <h2 id="guide-heading" className="font-serif text-2xl text-ink">
+          회차 가이드 (전체 스포일러)
+        </h2>
+        <p className="mt-2 text-xs text-muted">제목: 독일어 원제 · 영어 · 넷플릭스 한국어. 결말까지 적습니다.</p>
+        <div className="mt-3 grid gap-4 sm:grid-cols-2">
+          {[1, 2].map((s) => (
+            <div key={s}>
+              <Link href={seasonPath(s)} className="font-serif text-lg text-ink hover:text-terra">시즌 {s}</Link>
+              <ol className="mt-2 space-y-1 text-sm">
+                {EPISODES.filter((e) => e.season === s).map((e) => (
+                  <li key={e.overall}>
+                    <Link href={episodePath(e)} className="hover:text-terra">
+                      {e.ep}화 {e.ko} <span className="text-xs text-muted">· {e.de} · {e.en}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-10" aria-labelledby="relations">
+        <h2 id="relations" className="scroll-mt-40 font-serif text-2xl text-ink">
+          1–12화 관계 변화
+        </h2>
+        <p className="mt-2 text-xs text-muted">각 칸은 그 화가 끝났을 때의 관계입니다. 1–6은 시즌 1, 7–12는 시즌 2.</p>
+        <div className="mt-3 overflow-x-auto">
+          <table className="w-full min-w-[720px] border-collapse text-xs">
+            <thead>
+              <tr>
+                <th className="p-1 text-left">관계</th>
+                {EPISODES.map((e) => (
+                  <th key={e.overall} className="p-1">
+                    <Link href={episodePath(e)} className="hover:text-terra">{e.overall}</Link>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {RELATIONS.map((r) => (
+                <tr key={r.a + r.b} className="border-t border-line">
+                  <td className="p-1 text-left font-serif text-ink">{r.a} ↔ {r.b}</td>
+                  {r.states.map((st, i) => (
+                    <td key={i} className={`p-1 text-center rel-${st}`} style={{ background: REL_BG[st] }}>
+                      {REL_LABEL[st]}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <ul className="mt-3 space-y-1 text-sm leading-7">
+          {RELATIONS.map((r) => (
+            <li key={r.a + r.b}>
+              <span className="font-serif text-ink">{r.a} ↔ {r.b}</span>
+              <span className="text-muted"> — {r.note}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="mt-10" aria-labelledby="formosus-heading">
@@ -134,13 +210,19 @@ export default function BarbariansPage() {
           <li>기원전 16년 로올리우스 때 잃은 독수리와, 서기 9년의 세 군단은 다른 사건입니다. 극은 독수리 도난을 9년의 발단으로 당깁니다.</li>
         </ol>
         <p className="mt-3 text-sm leading-7 text-muted">
-          의상과 라틴어 대사는 볼 만한 장치로 평가받기도 했습니다. 그것과, 인물의 가족 관계를 사실로 외우는 일은 구분하면 됩니다. 회차별 줄거리를 여기 다시 풀어 적지는 않습니다.
+          의상과 라틴어 대사는 볼 만한 장치로 평가받기도 했습니다. 그것과, 인물의 가족 관계를 사실로 외우는 일은 구분하면 됩니다. 회차별 줄거리와 결말은 아래 시즌 페이지에 모두 적었습니다.
         </p>
       </section>
 
       <RelatedLinks
         links={[
+          { href: "/barbarians/s1", label: "시즌 1 회차" },
+          { href: "/barbarians/s2", label: "시즌 2 회차" },
           { href: "/films#barbarians-2020", label: "영화 목록의 바바리안" },
+          { href: "https://rome-stories.vercel.app/rulers/augustus", label: "로마 이야기: 아우구스투스" },
+          { href: "https://rome-stories.vercel.app/rulers/tiberius", label: "로마 이야기: 티베리우스" },
+          { href: "/people/germanicus", label: "게르마니쿠스" },
+          { href: "https://nadoo-timeline.vercel.app/events/teutoburg-forest", label: "연표: 서기 9년" },
           { href: "/chronicle/teutoburg", label: "토이토부르크 사료" },
           { href: "/family-tree?tree=teutoburg&focus=arminius", label: "사료 쪽 가문" },
         ]}
