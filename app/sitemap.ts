@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { EPISODES, episodePath } from "@/data/barbarians";
 import { chapters } from "@/data/chapters";
 import { kingdoms } from "@/data/kingdoms";
 import { people } from "@/data/people";
@@ -14,6 +15,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/people",
     "/family-tree",
     "/barbarians",
+    "/barbarians/s1",
+    "/barbarians/s2",
+    ...EPISODES.map(episodePath),
     "/films",
     "/sources",
     ...chapters.map((chapter) => `/chronicle/${chapter.slug}`),
