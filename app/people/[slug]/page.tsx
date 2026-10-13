@@ -13,6 +13,7 @@ import { SourceList } from "@/components/SourceList";
 import { personTreeHref } from "@/data/family-tree";
 import { people, personBySlug } from "@/data/people";
 import { articleLd, breadcrumbLd, jsonLd, pageMetadata } from "@/lib/seo";
+import { NadooHubPersonLink } from "@/components/NadooHubLink";
 
 export function generateStaticParams() {
   return people.map((person) => ({ slug: person.slug }));
@@ -110,6 +111,7 @@ export default async function PersonPage({ params }: { params: Promise<{ slug: s
         prev={prev ? { href: `/people/${prev.slug}`, label: prev.nameKo } : undefined}
         next={next ? { href: `/people/${next.slug}`, label: next.nameKo } : undefined}
       />
+      <NadooHubPersonLink base="https://germanic-stories.vercel.app/people/" slug={person.slug!} />
     </article>
   );
 }
