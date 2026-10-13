@@ -13,6 +13,7 @@ import { SourceList } from "@/components/SourceList";
 import { VikingBridge } from "@/components/VikingBridge";
 import { kingdomBySlug, kingdoms } from "@/data/kingdoms";
 import { articleLd, breadcrumbLd, jsonLd, pageMetadata } from "@/lib/seo";
+import { CoupangCard } from "@/components/CoupangCard";
 
 export function generateStaticParams() {
   return kingdoms.map((kingdom) => ({ slug: kingdom.slug }));
@@ -98,6 +99,7 @@ export default async function KingdomPage({ params }: { params: Promise<{ slug: 
         prev={prev ? { href: `/kingdoms/${prev.slug}`, label: prev.title } : undefined}
         next={next ? { href: `/kingdoms/${next.slug}`, label: next.title } : undefined}
       />
+      <CoupangCard />
     </article>
   );
 }

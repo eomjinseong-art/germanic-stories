@@ -7,6 +7,7 @@ import { RelatedLinks } from "@/components/RelatedLinks";
 import { SmartLink } from "@/components/SmartLink";
 import { CHARACTERS, EPISODES, PLACES, TRUTH_LABEL, episodePath, seasonPath } from "@/data/barbarians";
 import { breadcrumbLd, canonicalUrl, clip, jsonLd, pageMetadata } from "@/lib/seo";
+import { CoupangCard } from "@/components/CoupangCard";
 
 export const dynamicParams = false;
 
@@ -131,6 +132,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ season
         </ul>
       </section>
 
+      <CoupangCard />
       <section className="mt-10" aria-labelledby="places">
         <h2 id="places" className="font-serif text-2xl text-ink">장소</h2>
         <ul className="mt-3 space-y-2 text-sm leading-7">
