@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Elsewhere } from "@/components/Elsewhere";
@@ -45,6 +46,7 @@ export default function FamilyTreePage() {
         title="관계도"
         lead="누가 누구의 자녀인지, 누가 입양으로 후계가 됐는지를 그림으로 나눕니다. 금색 실선은 혈연, 금색 점선은 입양, 장미색은 배우자, 보라색 점선은 전승이 갈리는 부모입니다. 칸을 누르면 부모·배우자·자녀·형제가 밝아집니다."
       />
+      <NadooAd inline />
       <p className="mt-3 max-w-3xl text-sm leading-7 text-muted">
         바루스는 아우구스투스 가문의 혈연이 아니라 점선 칸입니다. 율리우스-클라우디우스 전체는{" "}
         <a href={`${ROME_URL}/family-tree`} className="text-laurel underline decoration-line underline-offset-4 hover:text-terra" target="_blank" rel="noopener noreferrer">

@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
@@ -34,6 +35,7 @@ export default function KingdomsPage() {
         title="로마 이후의 왕국"
         lead="476년 이후 서로마 황제는 이탈리아에서 사라졌지만, 라틴어와 도시와 교회는 남았습니다. 그 위에 선 왕국 여섯 곳을 짧게 적습니다. 메로베크 같은 이름 전승은 전설로 표시합니다."
       />
+      <NadooAd inline />
       <ul className="mt-8 grid gap-4 lg:grid-cols-2">
         {kingdoms.map((kingdom) => (
           <li key={kingdom.slug} className="rounded-lg border border-line bg-card p-5">

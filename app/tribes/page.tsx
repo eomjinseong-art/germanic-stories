@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { GuideBlock } from "@/components/GuideBlock";
 import { JsonLd } from "@/components/JsonLd";
@@ -35,6 +36,7 @@ export default function TribesPage() {
         title="부족 도감"
         lead="이름은 세기마다 갈라지고 합쳐졌습니다. 지도는 한 해의 영토가 아니라, 글에서 그 이름이 주로 나오는 자리를 기억하기 위한 도식입니다. 킴브리와 튜톤의 언어, 고트의 스칸디나비아 기원은 불확실하다고 표시합니다."
       />
+      <NadooAd inline />
       <TribeMap />
       <div className="mt-10 grid gap-4 lg:grid-cols-2">
         {tribes.map((tribe) => (

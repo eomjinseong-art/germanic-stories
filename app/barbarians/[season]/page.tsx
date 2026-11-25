@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -61,6 +62,7 @@ export default async function SeasonPage({ params }: { params: Promise<{ season:
         </ul>
       </section>
 
+      <NadooAd inline />
       <section className="mt-10" aria-labelledby="eps">
         <h2 id="eps" className="font-serif text-2xl text-ink">회차</h2>
         <ol className="mt-3 space-y-3">
