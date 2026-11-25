@@ -15,7 +15,7 @@ const serif = Noto_Serif_KR({ subsets: ["latin"], variable: "--font-noto-serif",
 const description = `${SITE_TAGLINE}. ${SITE_SUB}`;
 
 export const metadata: Metadata = {
-  verification: { google: "LglMaYLzS6dacAPQ5ZgZdPgzdtfLbp_1Rk5vh3WNPlM" },
+  verification: { google: "LglMaYLzS6dacAPQ5ZgZdPgzdtfLbp_1Rk5vh3WNPlM", other: { "naver-site-verification": "e970a48516f8ca490ee884a228cb07f075db5b14" } },
   metadataBase: new URL(SITE_URL),
   title: { default: `${SITE_NAME} · 쉬운 게르만 역사`, template: `%s · ${SITE_NAME}` },
   description,
