@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { GuideBlock } from "@/components/GuideBlock";
 import { JsonLd } from "@/components/JsonLd";
@@ -30,6 +31,7 @@ export default function WhoPage() {
         title="게르만족은 누구인가"
         lead="하나의 왕국이 아니었습니다. 라인 강과 다뉴브 강 북쪽에서 로마와 맞선 여러 집단을, 로마가 게르마니라고 묶었습니다. 아래 여섯 칸은 그 묶음의 말, 살림, 회의, 신, 그리고 낙인을 나눕니다."
       />
+      <NadooAd inline />
       <div className="mt-8 space-y-6">
         {identitySections.map((section) => (
           <GuideBlock

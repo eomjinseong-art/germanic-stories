@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
@@ -151,6 +152,7 @@ export default function BarbariansPage() {
         </ul>
       </section>
 
+      <NadooAd inline />
       <section className="mt-10" aria-labelledby="formosus-heading">
         <h2 id="formosus-heading" className="font-serif text-2xl text-ink">
           포르모사스는?

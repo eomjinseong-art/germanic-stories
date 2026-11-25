@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CauseGrid } from "@/components/CauseGrid";
@@ -34,6 +35,7 @@ export default function ChroniclePage() {
         title="로마와의 대립"
         lead="기원전 2세기 말의 킴브리부터 서기 476년까지입니다. 각 카드는 왜, 누구, 결과만 먼저 보여 줍니다. 토이토부르크는 그중 가장 길게 적었습니다. 476년 뒤의 왕국은 다음 메뉴입니다."
       />
+      <NadooAd inline />
       <ol className="mt-8 grid gap-4 lg:grid-cols-2">
         {chapters.map((chapter, index) => (
           <li key={chapter.slug} className="rounded-lg border border-line bg-card p-5">

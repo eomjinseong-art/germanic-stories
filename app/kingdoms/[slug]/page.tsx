@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -77,6 +78,7 @@ export default async function KingdomPage({ params }: { params: Promise<{ slug: 
           ))}
         </More>
       ) : null}
+      <NadooAd inline />
       <RelatedLinks links={kingdom.related} />
       {kingdom.filmSlugs.length ? (
         <RelatedFilms slugs={kingdom.filmSlugs} />
